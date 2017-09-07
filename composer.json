@@ -1,0 +1,32 @@
+{
+	"name": "iamsaint/yii2-datetimepicker",
+	"description": "Yii2 datetimepicker",
+	"version": "1.2.2",
+	"keywords": ["yii2", "extension", "yii2 widget", "yii2 datePicker", "yii2 dateTimePicker", "yii2 timePicker"],
+	"type": "yii2-extension",
+	"license": "MIT",
+	"minimum-stability": "dev",
+	"support": {
+		"source": "https://github.com/iamsaint/yii2-datetimepicker",
+		"issues": "https://github.com/iamsaint/yii2-datetimepicker/issues"
+	},
+	"authors": [
+		{
+			"name": "Saint",
+			"homepage": "https://github.com/iamsaint/"
+		}
+	],
+	"require": {
+		"yiisoft/yii2": "*"
+	},
+	"require-dev": {
+		"phpunit/phpunit": ">=3.7",
+		"phpunit/dbunit": ">=1.2",
+		"phpunit/phpunit-selenium": ">=1.2"
+	},
+	"autoload": {
+		"psr-4": {
+			"iamsaint\\datetimepicker\\": ""
+		}
+	}
+}
