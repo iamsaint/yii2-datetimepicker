@@ -1,12 +1,9 @@
-﻿<?php
-
+<?php
 /**
- * Yii2 DateTimePicker
- * 
- * @link https://github.com/iamsaint/yii2-datetimepicker
- * @license https://github.com/iamsaint/yii2-datetimepicker/blob/master/LICENSE MIT
- * @author Vladimir Korovin <rolan1986@gmail.com>
- * @see http://xdsoft.net/jqplugins/datetimepicker
+ * Created by PhpStorm.
+ * User: User
+ * Date: 07.09.2017
+ * Time: 18:31
  */
 
 namespace iamsaint\datetimepicker;
@@ -17,28 +14,28 @@ use yii\widgets\InputWidget;
 
 class Datetimepicker extends InputWidget
 {
-	public $options = [];
+    public $options = [];
 
-	public function init()
+    public function init()
     {
-		parent::init();
+        parent::init();
         Html::addCssClass($this->options, 'form-control');
-	}
+    }
 
-	public function run()
+    public function run()
     {
-		Assets::register($this->getView());
+        Assets::register($this->getView());
 
-		if ($this->hasModel()) {
+        if ($this->hasModel()) {
             echo Html::activeTextInput($this->model, $this->attribute, $this->options);
         } else {
             echo Html::textInput($this->name, $this->value, $this->options);
         }
 
-		$options = "";
-		if (!empty($this->options)) {
-			$options .= "{\n";
-			foreach ((array) $this->options as $key => $value) {
+        $options = "";
+        if (!empty($this->options)) {
+            $options .= "{\n";
+            foreach ((array) $this->options as $key => $value) {
                 if (is_array($value)) {
                     $values = [];
                     foreach ($value as $_key => $_value) {
@@ -56,13 +53,13 @@ class Datetimepicker extends InputWidget
                     $options .= "    {$key}: '{$value}',\n";
                 }
             }
-			$options .= "}\n";
-		}
+            $options .= "}\n";
+        }
 
-		$JavaScript = "jQuery('";
-		$JavaScript .= '#'.$this->options['id'];
-		$JavaScript .= "').datetimepicker({$options});";
+        $JavaScript = "jQuery('";
+        $JavaScript .= '#'.$this->options['id'];
+        $JavaScript .= "').datetimepicker({$options});";
 
-		$this->getView()->registerJs($JavaScript, View::POS_END);
-	}
+        $this->getView()->registerJs($JavaScript, View::POS_END);
+    }
 }
